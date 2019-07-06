@@ -21,7 +21,11 @@ private WebDriver driver;
 	private WebElement password; 
 	
 	@FindBy(xpath="//input[@type='submit']")
-	private WebElement loginbutton; 
+	private WebElement loginbutton;
+	
+	@FindBy(xpath="//div[@id='System_nyHsmShk']/div[1]")
+	private WebElement loginfailmsg;
+	
 	
 	
 	 public void enterusername(String username) {
@@ -38,6 +42,8 @@ private WebDriver driver;
 			this.loginbutton.click();
 		    }
 	
-	
+	public String Loginfailure() {
+		return this.loginfailmsg.getText();
+	}
 	
 }

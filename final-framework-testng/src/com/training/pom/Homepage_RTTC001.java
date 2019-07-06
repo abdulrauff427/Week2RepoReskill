@@ -32,6 +32,7 @@ private WebDriver driver;
 		action.moveToElement(this.login_regist).build().perform();
         this.login_regist_click.click();
         
+        
 	}
 	
 	public void clickregisterbtn() {

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name = "Sample test Suite">
+<suite name = "Sample test Suite" >
    <test name = "Sample test">
+   <parameter name = "uname" value="TestNGexecution"/>
       <classes>
-         <class name = "com.training.sanity.tests.RTTC_001" />
-         <class name = "com.training.sanity.tests.RTTC_002" />
-         <class name = "com.training.sanity.tests.RTTC_003" />
-         <class name = "com.training.sanity.tests.RTTC_004" />
-         <class name = "com.training.sanity.tests.RTTC_005" />
-      </classes>
-   </test>
+         <class name = "com.training.sanity.tests.TestNg_param" />
+               </classes>
+               </test>
+     
 </suite>	

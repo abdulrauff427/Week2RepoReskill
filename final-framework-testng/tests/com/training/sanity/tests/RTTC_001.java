@@ -63,8 +63,8 @@ public class RTTC_001 {
 		register.enteraddress2("bangalore");
 		register.entercity("bangalore");
 		register.enterpostalcode("560022");
-		register.selectcountry();
-		register.selectstate();
+		register.selectcountry("India");
+		register.selectstate("Karnataka");
 		register.enterpassword("manzoor1");
 		register.confirmpassword("manzoor1");
 		register.SelectNo();

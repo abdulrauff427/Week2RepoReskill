@@ -68,6 +68,7 @@ public class RTTC_002 {
 
 	@Test
 	public void Login() {
+		
 
 		logger = extent.createTest("Homepage test");
 		logger.log(Status.INFO, "We are at the homepage");
@@ -82,6 +83,8 @@ public class RTTC_002 {
 		login.enterpassword("manzoor1");
 		logger2.log(Status.PASS, "Password entered");
 		log.info("user id and password entered");
+		log.info("Log4j message");
+	
 		screenShot.captureScreenShot("RTTC002_2");
 		login.clickLoginbutton();
 		logger2.log(Status.PASS, "Login button is clicked");

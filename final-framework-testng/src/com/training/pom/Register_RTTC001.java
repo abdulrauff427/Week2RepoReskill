@@ -2,17 +2,23 @@ package com.training.pom;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.trianing.waits.WaitTypes;
 
 public class Register_RTTC001 {
 	
 	private WebDriver driver;
+	public WaitTypes expwait = new WaitTypes(driver);
 
 	public Register_RTTC001(WebDriver driver) {
 		this.driver = driver; 
@@ -20,14 +26,18 @@ public class Register_RTTC001 {
 
 }
 	
-	@FindBy(xpath="//input[@id='input-firstname']")
+	@FindBy(xpath="//input[@name='firstname']")
 	private WebElement firstname; 
 	
-	@FindBy(xpath="//input[@id='input-lastname']")
+	@FindBy(xpath="//input[@name='lastname']")
 	private WebElement lastname; 
 	
-	@FindBy(xpath="//input[@id='input-email']")
+	@FindBy(xpath="//input[@name='email']")
 	private WebElement email; 
+	
+	@FindBy(xpath="//input[@id='input-payment-email']")
+	private WebElement guestemail; 
+	
 	
 	@FindBy(xpath="//input[@name='telephone']")
 	private WebElement telephone; 
@@ -65,9 +75,35 @@ public class Register_RTTC001 {
 	@FindBy(xpath="//input[contains(@value,'Cont')]")
 	private WebElement continuebutton; 
 	
+	@FindBy(xpath="//input[@id='button-guest']")
+	private WebElement continuebilldetails; 
+	
+	@FindBy(xpath="//input[@id='button-payment-address']")
+	private WebElement continuebilldetailspayment; 
+	
+	@FindBy(xpath="//input[@id='button-shipping-address']")
+	private WebElement continuedeliveryaddress;
+	
+	@FindBy(xpath="//input[@id='button-shipping-method']")
+	private WebElement continuedeliverymethod; 
+	
 	@FindBy(xpath="//div[@id='System_nyHsmShk']/div/p[1]")
 	private WebElement confirmmsg;
+	
+	@FindBy(xpath="//input[@name='agree']")
+	private WebElement checkboxPaymentMethod;
+	
+	@FindBy(xpath="//input[@id='button-payment-method']")
+	private WebElement continuepaymentmethod;
+	
+	@FindBy(xpath="//input[@id='button-confirm']")
+	private WebElement buttonConfirmOrder;
+	
+	@FindBy(xpath="//div[@id='System_s3bhXNDb']/div/p[1]")
+	private WebElement msgSuccessfulOrder;
+	
 
+	
 	
 	    public void enterfirstname(String firstname) {
 		this.firstname.clear();
@@ -82,6 +118,11 @@ public class Register_RTTC001 {
 	    public void enteremail(String email) {
 			this.email.clear();
 			this.email.sendKeys(email);
+		    }
+	    
+	    public void enteremailforguest(String email) {
+			this.guestemail.clear();
+			this.guestemail.sendKeys(email);
 		    }
 	    
 	    public void entertelephone(String telephone) {
@@ -109,15 +150,15 @@ public class Register_RTTC001 {
 			this.postalcode.sendKeys(postcode);
 		    }
 	    
-	    public void selectcountry() {
+	    public void selectcountry(String country) {
 	    	Select sel = new Select(this.country);
-		    sel.selectByVisibleText("India");
+		    sel.selectByVisibleText(country);
 			
 		    }
 	    
-	    public void selectstate() {
+	    public void selectstate(String state) {
 	    	Select sel = new Select(this.state);
-			sel.selectByVisibleText("Karnataka");
+			sel.selectByVisibleText(state);
 		    }
 	    
 	    public void enterpassword(String password) {
@@ -142,12 +183,53 @@ public class Register_RTTC001 {
 			this.continuebutton.click();
 		    }
 	    
+	    public void clickcontinuebilldetails() {
+			this.continuebilldetails.click();
+		    }
+	    
+	    public void clickcontinuebilldetailsforpayment() {
+			this.continuebilldetailspayment.click();
+		    }
+	    
+	    public void clickcontinuedeliverdetails() {
+			this.continuedeliveryaddress.click();
+		    }
+	    
+	    public void clickcontinuedeliveryMethod() {
+			this.continuedeliverymethod.click();
+		    }
+	    
+	    public void clickcheckboxpaymentmethod() {
+	       // js = (JavascriptExecutor) driver;
+	    	//js.executeScript("arguments[0].scrollIntoView();", this.checkboxPaymentMethod);
+	    	//expwait.elementToBeClickable(this.checkboxPaymentMethod, 20);
+	    	WebDriverWait wait = new WebDriverWait(driver, 20);
+	    	wait.until(ExpectedConditions.elementToBeClickable(this.checkboxPaymentMethod));
+	    	this.checkboxPaymentMethod.click();
+	    }
+	    
+	    public void clickcontinuepaymentmethod() {
+	    	this.continuepaymentmethod.click();
+	    }
+	    
+	    public void clickConfirmbutton() {
+	    	this.buttonConfirmOrder.click();
+	    }
+	    
+	    
+	    
 	    public String verifymsg()
 	    {
 	    	return this.confirmmsg.getText();
 	    }
 	    
+	    public String verifymsgSuccessfulOrder()
+	    {
+	    	return this.msgSuccessfulOrder.getText();
+	    }
 	    
+	    
+	   
 	    
 	    
 	    
