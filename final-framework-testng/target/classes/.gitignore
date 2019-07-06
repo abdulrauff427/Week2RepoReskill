@@ -1,2 +1,7 @@
 /com/
 /META-INF/
+/Log4j.properties
+/db.properties
+/db.sql
+/others.properties
+/sql.properties
