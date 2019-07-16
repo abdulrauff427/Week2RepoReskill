@@ -1,33 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="53795" started-at="2019-07-12T09:27:59Z" finished-at="2019-07-12T09:28:53Z">
+  <suite name="Default suite" duration-ms="53029" started-at="2019-07-16T07:21:03Z" finished-at="2019-07-16T07:21:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="53795" started-at="2019-07-12T09:27:59Z" finished-at="2019-07-12T09:28:53Z">
-      <class name="com.training.sanity.tests.RTTC_065">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC_065@5442a311]" name="setUpBeforeClass" is-config="true" duration-ms="32" started-at="2019-07-12T09:27:59Z" finished-at="2019-07-12T09:27:59Z">
+    <test name="Default test" duration-ms="53029" started-at="2019-07-16T07:21:03Z" finished-at="2019-07-16T07:21:57Z">
+      <class name="com.training.sanity.tests.RTTC_061">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="setUpBeforeClass" is-config="true" duration-ms="16" started-at="2019-07-16T07:21:03Z" finished-at="2019-07-16T07:21:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC_065@5442a311]" name="setUp" is-config="true" duration-ms="10403" started-at="2019-07-12T09:27:59Z" finished-at="2019-07-12T09:28:09Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="setUp" is-config="true" duration-ms="11104" started-at="2019-07-16T07:21:04Z" finished-at="2019-07-16T07:21:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.RTTC_065@5442a311]" name="validLoginTest" duration-ms="18337" started-at="2019-07-12T09:28:09Z" finished-at="2019-07-12T09:28:28Z">
+        <test-method status="PASS" signature="Register(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="Register" duration-ms="12631" started-at="2019-07-16T07:21:15Z" data-provider="db-inputs" finished-at="2019-07-16T07:21:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abdul]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Syed]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[abdsye@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9876565678]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[APHB colony]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[gachibowli]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Hyderabad]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[500033]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Telangana]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[abdul1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[abdul1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC_065@5442a311]" name="tearDown" is-config="true" duration-ms="1002" started-at="2019-07-12T09:28:28Z" finished-at="2019-07-12T09:28:29Z">
+        </test-method> <!-- Register -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="tearDown" is-config="true" duration-ms="1853" started-at="2019-07-16T07:21:28Z" finished-at="2019-07-16T07:21:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyproduct()[pri:0, instance:com.training.sanity.tests.RTTC_065@5442a311]" name="verifyproduct" is-config="true" duration-ms="23961" started-at="2019-07-12T09:28:29Z" finished-at="2019-07-12T09:28:53Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="setUp" is-config="true" duration-ms="10768" started-at="2019-07-16T07:21:29Z" finished-at="2019-07-16T07:21:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyproduct -->
-      </class> <!-- com.training.sanity.tests.RTTC_065 -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="Register(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="Register" duration-ms="14463" started-at="2019-07-16T07:21:40Z" data-provider="db-inputs" finished-at="2019-07-16T07:21:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ahmed]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mohammed]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[moha@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9876565600]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[KPHB colony]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[kukatpally]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Hyderabad]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[500039]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Telangana]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[abdul2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[abdul2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RTTC_061@5442a311]" name="tearDown" is-config="true" duration-ms="1879" started-at="2019-07-16T07:21:55Z" finished-at="2019-07-16T07:21:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.RTTC_061 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
