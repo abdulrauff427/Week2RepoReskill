@@ -14,3 +14,6 @@ public interface Driver {
 	String PHANTOM_PATH="";
 	
 }
+
+
+//System.setproperty("webdriver.chrome.driver", "PAth of the exe")

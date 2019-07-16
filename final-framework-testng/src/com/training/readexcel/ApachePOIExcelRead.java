@@ -19,7 +19,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *      access.
  */
 public class ApachePOIExcelRead {
-	public  String [][] getExcelContent(String fileName) {
+	public  String [][] getExcelContent(String fileName, int sheetno) {
 		int rowCount =0; 
 		String [][] list1 = null; 
 		
@@ -31,11 +31,13 @@ public class ApachePOIExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
-			XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheetAt(sheetno);
 			
-			int rowTotal = sheet.getLastRowNum();
+			//int rowTotal = sheet.getLastRowNum();   //earlier code was like this and it was taking the header values also while execution so changing it in step 37 to reduce the total row count to 1
+			int rowTotal = sheet.getLastRowNum()-1;
 
-			if ((rowTotal > 0) || (sheet.getPhysicalNumberOfRows() > 0)) {
+			if ((rowTotal > 0) || (sheet.getPhysicalNumberOfRows() > 0)) {  // when rowTotal was 0 it was taking 5 rows instead of 4 rows, so updating it as step 40 .
+			//	if ((rowTotal > 1) || (sheet.getPhysicalNumberOfRows() > 1)) {
 			    rowTotal++;
 			}
 			
@@ -44,8 +46,10 @@ public class ApachePOIExcelRead {
 			Iterator<Row> rowIterator = sheet.iterator();
 			 list1 = new String[rowTotal][2];
 			 
+			 Row row = rowIterator.next(); // first it iterates to second row from first row
+			 
 			while (rowIterator.hasNext()) {
-				Row row = rowIterator.next();
+				 row = rowIterator.next();
 				// For each row, iterate through all the columns
 				Iterator<Cell> cellIterator = row.cellIterator();
 
@@ -88,7 +92,7 @@ public class ApachePOIExcelRead {
 		return list1;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
 		
 		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
@@ -97,5 +101,5 @@ public class ApachePOIExcelRead {
 			}
 		}
 
-	}
+	}*/
 }

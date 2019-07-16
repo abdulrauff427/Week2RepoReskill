@@ -6,9 +6,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.trianing.waits.WaitTypes;
+
 public class EditPersonaldetails_RTTC005 {
 	
 private WebDriver driver; 
+public WaitTypes wait = new WaitTypes(driver);
 	
 	public EditPersonaldetails_RTTC005(WebDriver driver) {
 		this.driver = driver; 
@@ -44,6 +47,7 @@ private WebDriver driver;
 	
 	public void EnterFirstName(String firstname) {
 		this.FirstName.clear();
+		wait.presenceElementLocated("input-firstname", 20);
 		this.FirstName.sendKeys(firstname);
 		
 	}
@@ -56,7 +60,9 @@ private WebDriver driver;
     
     public void EnterEmail(String email) {
     	this.email.clear();
+    	//wait.presenceElementLocated(this.email, 20);
     	this.email.sendKeys(email);
+    	
 		
 		
 	}

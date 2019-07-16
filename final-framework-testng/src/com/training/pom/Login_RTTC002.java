@@ -1,7 +1,9 @@
 package com.training.pom;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -26,6 +28,15 @@ private WebDriver driver;
 	@FindBy(xpath="//div[@id='System_nyHsmShk']/div[1]")
 	private WebElement loginfailmsg;
 	
+	@FindBy(xpath="//a[@id='search_button']")
+	private WebElement searchicon;
+	
+	@FindBy(xpath="//input[@name='search']")
+	private WebElement searchtextbox;
+	
+	
+	
+	
 	
 	
 	 public void enterusername(String username) {
@@ -46,4 +57,16 @@ private WebDriver driver;
 		return this.loginfailmsg.getText();
 	}
 	
+	public void hovertoSarchbox() {
+		Actions action = new Actions(driver);
+		action.moveToElement(this.searchicon).click().build().perform();
+		//this.searchicon.sendKeys("Eyeware");		
+	}
+	public void searchproduct()
+	{
+		this.searchtextbox.click();
+		this.searchtextbox.sendKeys("Eyewares");
+		this.searchtextbox.sendKeys(Keys.ENTER);
+	
+	}
 }

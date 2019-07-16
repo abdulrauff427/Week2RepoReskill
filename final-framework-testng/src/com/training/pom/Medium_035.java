@@ -24,12 +24,18 @@ private WebDriver driver;
 	private WebElement saveButton;
 	@FindBy(xpath="//*[@id=\"menu-catalog\"]/ul/li[2]/a") //products
 	private WebElement products;
+	@FindBy(xpath="//li[@id='menu-catalog']/ul/li[1]/a") //products
+	private WebElement categories;
 	@FindBy(xpath="//i[@class='fa fa-plus']")
 	private WebElement addButton;		//addbutton
 	@FindBy(id="input-name1")	//product-name
 	private WebElement productName;
 	@FindBy(id="input-meta-title1")	//metaTagTitle
 	private WebElement metaTagTitle; 
+	@FindBy(xpath="//div[@class='note-editable panel-body']")
+	private WebElement product_description;
+	@FindBy(id="input-meta-description1")
+	private WebElement megatag_description;
 	@FindBy(linkText="Data")
 	private WebElement dataTab;	//datatab -- need to check
 	@FindBy(id="input-model") //modeltextbox
@@ -88,6 +94,12 @@ private WebDriver driver;
 		this.products.click();
 		//Thread.sleep(3000);
 	}
+	
+	public void clickCatefories() throws InterruptedException {
+		this.categories.click();
+		//Thread.sleep(3000);
+	}
+	
 	public void clickAddButton() throws InterruptedException {
 		this.addButton.click();
 		//Thread.sleep(3000);
@@ -95,10 +107,17 @@ private WebDriver driver;
 	public void addPrdouctName(String productName) throws InterruptedException {
 		this.productName.sendKeys(productName);
 		//Thread.sleep(3000);
+		
+	}
+	public void addproddesc(String desc) {
+		this.product_description.sendKeys(desc);
 	}
 	public void enterMetaTagTitle(String metaTagTitle) throws InterruptedException {
 		this.metaTagTitle.sendKeys(metaTagTitle);
 		//Thread.sleep(3000);
+	}
+	public void addMegaTagDesc(String megatagdesc) {
+		this.megatag_description.sendKeys(megatagdesc);
 	}
 	public void clickOnDataTab() throws InterruptedException {
 		this.dataTab.click();
